@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishnukumar - Portfolio</title>
+    <meta name="description" content="Classic vintage-style personal portfolio website for Vishnukumar - BSc Computer Science Student & Aspiring IT Developer from Madurai">
+    <meta name="keywords" content="Vishnukumar, portfolio, computer science, developer, Python, Flask, JavaScript, web development">
+    <meta name="author" content="Vishnukumar">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D4AF37">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- AI Assistant Chatbot -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-avatar">🤖</div>
+            <div class="chat-info">
+                <h4 class="chat-title">Portfolio Assistant</h4>
+                <span class="chat-status">Online</span>
+            </div>
+            <button class="chat-close" id="chatClose">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Hi! I'm Vishnukumar's portfolio assistant. I can help you learn more about his skills, projects, and experience. What would you like to know?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask me about Vishnukumar's work...">
+            <button class="chat-send" id="chatSend">📤</button>
+        </div>
+    </div>
+
+    <!-- Floating Action Button Menu -->
+    <div class="fab-container">
+        <!-- Main FAB Button -->
+        <button class="fab-main" id="fabMain" aria-label="Open menu">
+            <span class="fab-icon">⚙️</span>
+        </button>
+        
+        <!-- FAB Menu Items -->
+        <div class="fab-menu" id="fabMenu">
+            <button class="fab-item theme-fab" id="themeFab" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="fab-item chat-fab" id="chatFab" aria-label="Open chat assistant">
+                <span class="chat-icon">💬</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">VK</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item desktop-theme-toggle">
+                        <button class="theme-toggle desktop-only" id="desktopThemeToggle" aria-label="Toggle theme">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="decorative-line top"></div>
+                <h1 class="hero-title">Vishnukumar</h1>
+                <p class="hero-subtitle">BSc Computer Science Student | Aspiring IT Developer</p>
+                <p class="hero-location">Madurai</p>
+                <div class="decorative-line bottom"></div>
+                <a href="#about" class="cta-button">Discover My Work</a>
+            </div>
+            <div class="hero-decoration">
+                <div class="vintage-emblem"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="profile-photo.png" alt="Vishnukumar - Computer Science Student" class="profile-photo">
+                        <div class="profile-placeholder" style="display: none;">
+                            <span>VK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="about-description">
+                        I am Vishnukumar, a Computer Science student from Madurai passionate about building elegant and practical software solutions in Python, Flask, and JavaScript. I focus on creating refined, efficient projects while continuously improving my skills.
+                    </p>
+                    <p class="about-description">
+                        My journey in technology is driven by curiosity and a desire to solve real-world problems through innovative software development. I believe in writing clean, maintainable code and creating user experiences that are both functional and beautiful.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-number">5+</span>
+                            <span class="highlight-text">Projects Completed</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">2+</span>
+                            <span class="highlight-text">Years Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Voice Assistant</h3>
+                        <div class="project-tech">Python</div>
+                    </div>
+                    <p class="project-description">
+                        An intelligent voice assistant built with Python, featuring speech recognition and natural language processing capabilities for seamless user interaction.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/VishnuKumarLH/OIBSIP_Python_Programming_Task1" target="_blank" class="project-link github">
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Chat Room</h3>
+                        <div class="project-tech">Flask</div>
+                    </div>
+                    <p class="project-description">
+                        A real-time chat application built with Flask, enabling multiple users to communicate seamlessly with modern web technologies.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/VishnuKumarLH/OIBSIP_Python_Programming_Task5" target="_blank" class="project-link github">
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Weather App</h3>
+                        <div class="project-tech">JavaScript</div>
+                    </div>
+                    <p class="project-description">
+                        A responsive weather application providing real-time weather information with an intuitive interface and location-based forecasts.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/VishnuKumarLH/weather-app" target="_blank" class="project-link github">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://climate-radar.netlify.app/" target="_blank" class="project-link live">
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Movie Search App</h3>
+                        <div class="project-tech">JavaScript</div>
+                    </div>
+                    <p class="project-description">
+                        A comprehensive movie search application with detailed information, ratings, and reviews, built with modern JavaScript and API integration.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/VishnuKumarLH/movie-park" target="_blank" class="project-link github">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://movie-wallet.netlify.app/" target="_blank" class="project-link live">
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">Python</div>
+                        <div class="skill-badge">JavaScript</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Web Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">HTML</div>
+                        <div class="skill-badge">CSS</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Basic Programming Knowledge</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">C</div>
+                        <div class="skill-badge">C++</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Tools & Platforms</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">Git</div>
+                        <div class="skill-badge">GitHub</div>
+                        <div class="skill-badge">Netlify</div>
+                        <div class="skill-badge">Render</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">Let's Connect</h3>
+                    <p class="contact-description">
+                        I'm always interested in discussing new opportunities, collaborations, or simply connecting with fellow developers.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-label">Email:</span>
+                            <a href="mailto:vishnu241206@gmail.com" class="contact-value">vishnu241206@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Phone:</span>
+                            <a href="tel:+919500906427" class="contact-value">+91 9500906427</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">GitHub:</span>
+                            <a href="https://github.com/VishnuKumarLH" target="_blank" class="contact-value">VishnuKumarLH</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/vishnukumar-l-h-ba6239342/" target="_blank" class="contact-value">Vishnukumar L H</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="from_name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="from_email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beautiful Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-main">
+                    <!-- Footer Brand -->
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <span class="footer-logo-text">VK</span>
+                        </div>
+                        <h3 class="footer-title">Vishnukumar</h3>
+                        <p class="footer-subtitle">Computer Science Student & Aspiring Developer</p>
+                        <p class="footer-description">Passionate about creating elegant software solutions and building innovative web applications.</p>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home" class="footer-link">Home</a></li>
+                            <li><a href="#about" class="footer-link">About</a></li>
+                            <li><a href="#projects" class="footer-link">Projects</a></li>
+                            <li><a href="#skills" class="footer-link">Skills</a></li>
+                            <li><a href="#contact" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Get In Touch</h4>
+                        <div class="footer-contact">
+                            <div class="footer-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>vishnu241206@gmail.com</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 9500906427</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Madurai, Tamil Nadu</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Follow Me</h4>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/iam.__.vishnu/?utm_source=ig_web_button_share_sheet&igsh=MWp6bjBpMW1qODJkbw%3D%3D#" target="_blank" class="social-link instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@vzhnu24" target="_blank" class="social-link youtube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://github.com/VishnuKumarLH" target="_blank" class="social-link github" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/vishnukumar-l-h-ba6239342/" target="_blank" class="social-link linkedin" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="footer-social-text">Let's connect and build something amazing together!</p>
+                    </div>
+                </div>
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="footer-divider"></div>
+                    <div class="footer-bottom-content">
+                        <p class="footer-copyright">
+                            © 2025 <span class="highlight">Vishnukumar</span>. All rights reserved.
+                        </p>
+                        <p class="footer-made-with">
+                            Built with <i class="fas fa-heart heart-icon"></i> using HTML, CSS & JavaScript
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
