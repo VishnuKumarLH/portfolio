@@ -1,0 +1,2 @@
+Sitemap: https://vzhnu.me/sitemap.xml
+Sitemap: https://vzhnu.me/sitemap.txt
