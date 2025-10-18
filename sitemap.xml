@@ -6,4 +6,11 @@
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
+  
+  <url>
+    <loc>https://vishnukumarlh.github.io/portfolio/</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
