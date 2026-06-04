@@ -1,2 +1,5 @@
 Sitemap: https://vzhnu.me/sitemap.xml
 Sitemap: https://vzhnu.me/sitemap.txt
+
+Sitemap: https://vzhnu.netlify.app/sitemap.xml
+Sitemap: https://vzhnu.netlify.app/sitemap.txt
